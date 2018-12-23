@@ -41,6 +41,7 @@ def smart_read(filename):#{{{
 #}}}
 def smart_write(filename, text):#{{{
     """Return content of file"""
+    filename.parent.mkdir(parents=True, exist_ok=True)
     with open(filename, 'w+', encoding='utf=8') as f:
         return f.write(text)
 #}}}
